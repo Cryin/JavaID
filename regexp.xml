@@ -1,0 +1,218 @@
+<root>
+    <javaid vultype='XXE'>
+        <function>
+            <rule name='SAXReader'>
+                <regmatch>
+                    <regexp>new\s+SAXReader\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='SAXBuilder'>
+                <regmatch>
+                    <regexp>new\s+SAXBuilder\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='SAXParser'>
+                <regmatch>
+                    <regexp>newSAXParser\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='XMLReader'>
+                <regmatch>
+                    <regexp>createXMLReader\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='DocumentBuilder'>
+                <regmatch>
+                    <regexp>newDocumentBuilder\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='XMLStreamReader'>
+                <regmatch>
+                    <regexp>createXMLStreamReader\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='ObjectDeserialization'>
+        <function>
+            <rule name='readObject'>
+                <regmatch>
+                    <regexp>\.readObject\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='parseObject'>
+                <regmatch>
+                    <regexp>JSON\.parseObject\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='readValue'>
+                <regmatch>
+                    <regexp>ObjectMapper\.readValue</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='fromXML'>
+                <regmatch>
+                    <regexp>fromXML\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='readUnshared'>
+                <regmatch>
+                    <regexp>readUnshared\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='Yaml'>
+                <regmatch>
+                    <regexp>.load\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='SSRF'>
+        <function>
+            <rule name='HttpURLConnection'>
+                <regmatch>
+                    <regexp>openConnection\(|getInputStream\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='URL'>
+                <regmatch>
+                    <regexp>URL\(|openStream\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='HttpClient'>
+                <regmatch>
+                    <regexp>HttpClient\(|executeMethod\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='FileUpload'>
+        <function>
+            <rule name='MultipartFile'>
+                <regmatch>
+                    <regexp>\.getOriginalFilename\(|MultipartFile\s</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='File'>
+        <function>
+            <rule name='createNewFile'>
+                <regmatch>
+                    <regexp>\.createNewFile\(|FileOutputStream\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='delete'>
+                <regmatch>
+                    <regexp>\.delete\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='FileInputStream'>
+                <regmatch>
+                    <regexp>new\sFileInputStream\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='Autobinding'>
+        <function>
+            <rule name='SessionAttributes'>
+                <regmatch>
+                    <regexp>@SessionAttributes</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='ModelAttribute'>
+                <regmatch>
+                    <regexp>@ModelAttribute</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='URL-Redirect'>
+        <function>
+            <rule name='sendRedirect'>
+                <regmatch>
+                    <regexp>sendRedirect\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='setHeader'>
+                <regmatch>
+                    <regexp>setHeader\(\"refresh</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='forward'>
+                <regmatch>
+                    <regexp>forward\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='EXEC'>
+        <function>
+            <rule name='getRuntime'>
+                <regmatch>
+                    <regexp>getRuntime\(\)\.exec\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='ProcessBuilder'>
+                <regmatch>
+                    <regexp>ProcessBuilder\.start</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='GroovyShell'>
+                <regmatch>
+                    <regexp>GroovyShell\.evaluate</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+	<!--
+	<javaid vultype='XXE'>
+        <function>
+            <rule name='SAXReader'>
+                <regmatch>
+                    <regexp>new\s+SAXReader\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+	-->
+</root>

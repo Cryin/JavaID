@@ -33,6 +33,7 @@ JavaObjectDeserialization:
 SSRF:
     "HttpClient",
     "URL",
+    "ImageIO",
     "HttpURLConnection"
 FILE:
     "MultipartFile",

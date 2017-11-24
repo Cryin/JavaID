@@ -102,6 +102,13 @@
                 </regmatch>
             </rule>
         </function>
+	<function>
+            <rule name='ImageIO'>
+                <regmatch>
+                    <regexp>ImageIO\.read\(</regexp>
+                </regmatch>
+            </rule>
+        </function>    
         <function>
             <rule name='HttpClient'>
                 <regmatch>

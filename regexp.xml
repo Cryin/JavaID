@@ -192,7 +192,7 @@
         <function>
             <rule name='ProcessBuilder'>
                 <regmatch>
-                    <regexp>ProcessBuilder\.start</regexp>
+                    <regexp>ProcessBuilder</regexp>
                 </regmatch>
             </rule>
         </function>

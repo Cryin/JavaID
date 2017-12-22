@@ -34,7 +34,8 @@ SSRF:
     "HttpClient",
     "URL",
     "ImageIO",
-    "HttpURLConnection"
+    "HttpURLConnection",
+    "OkHttpClient" 
 FILE:
     "MultipartFile",
     "createNewFile",

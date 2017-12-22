@@ -116,6 +116,13 @@
                 </regmatch>
             </rule>
         </function>
+        <function>
+            <rule name='OkHttpClient'>
+                <regmatch>
+                    <regexp>\.newCall\(|Request.Builder\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function> 
     </javaid>
     <javaid vultype='FileUpload'>
         <function>

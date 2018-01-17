@@ -218,6 +218,15 @@
             </rule>
         </function>
     </javaid>
+    <javaid vultype='SQLi'>
+        <function>
+            <rule name='select'>
+                <regmatch>
+                    <regexp>(into|where)[^\$]*(\$\{[^,#=\s]+\})</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
 	<!--
 	<javaid vultype='XXE'>
         <function>

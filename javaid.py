@@ -82,7 +82,7 @@ class javaid(object):
         for d in dirs:
             subpath = os.path.join(path, d) 
             if os.path.isfile(subpath):
-                if os.path.splitext(subpath)[1] == '.java':
+                if os.path.splitext(subpath)[1] == '.java' or os.path.splitext(subpath)[1] == '.xml':
                     self._filename =subpath
                     self.handleFile(subpath)  
             else:

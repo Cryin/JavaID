@@ -32,6 +32,7 @@ JavaObjectDeserialization:
     "JSON.parseObject"
 SSRF:
     "HttpClient",
+    "Socket",
     "URL",
     "ImageIO",
     "HttpURLConnection",

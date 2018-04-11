@@ -116,6 +116,13 @@
                 </regmatch>
             </rule>
         </function>
+	<function>
+            <rule name='Socket'>
+                <regmatch>
+                    <regexp>new\sSocket\(</regexp>
+                </regmatch>
+            </rule>
+        </function>    
         <function>
             <rule name='OkHttpClient'>
                 <regmatch>

@@ -234,6 +234,15 @@
             </rule>
         </function>
     </javaid>
+    <javaid vultype='Info-disclosure'>
+        <function>
+            <rule name='actuator'>
+                <regmatch>
+                    <regexp>spring-boot-starter-actuator</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
 	<!--
 	<javaid vultype='XXE'>
         <function>

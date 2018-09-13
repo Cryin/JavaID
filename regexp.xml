@@ -129,7 +129,14 @@
                     <regexp>\.newCall\(|Request.Builder\(\)</regexp>
                 </regmatch>
             </rule>
-        </function> 
+        </function>
+	<function>
+            <rule name='DataSource'>
+                <regmatch>
+                    <regexp>\.getConnection\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
     </javaid>
     <javaid vultype='FileUpload'>
         <function>

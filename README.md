@@ -37,7 +37,8 @@ SSRF:
     "ImageIO",
     "HttpURLConnection",
     "OkHttpClient" 
-    "DataSource.getConnection"
+    "SimpleDriverDataSource.getConnection"
+    "DriverManager.getConnection"
 FILE:
     "MultipartFile",
     "createNewFile",

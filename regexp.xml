@@ -232,6 +232,22 @@
             </rule>
         </function>
     </javaid>
+    <javaid vultype='SPelInjection'>
+        <function>
+            <rule name='SpelExpressionParser'>
+                <regmatch>
+                    <regexp>SpelExpressionParser</regexp>
+                </regmatch>
+            </rule>
+        </function>
+        <function>
+            <rule name='getValue'>
+                <regmatch>
+                    <regexp>getValue\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
     <javaid vultype='SQLi'>
         <function>
             <rule name='select'>

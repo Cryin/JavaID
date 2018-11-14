@@ -131,7 +131,14 @@
             </rule>
         </function>
 	<function>
-            <rule name='DataSource'>
+            <rule name='SimpleDriverDataSource'>
+                <regmatch>
+                    <regexp>\.getConnection\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+	<function>
+            <rule name='DriverManager'>
                 <regmatch>
                     <regexp>\.getConnection\(</regexp>
                 </regmatch>

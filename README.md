@@ -37,10 +37,14 @@ SSRF:
     "ImageIO",
     "HttpURLConnection",
     "OkHttpClient" 
+    "DataSource.getConnection"
 FILE:
     "MultipartFile",
     "createNewFile",
     "FileInputStream"
+SPelInjection:
+    "SpelExpressionParser",
+    "getValue"
 Autobinding:
     "@SessionAttributes",
     "@ModelAttribute"

@@ -510,34 +510,6 @@ public class SPelInjectionController {
 ##### 修复方案
 * 解析el表达式时，参数不要由外部用户输入
 
-### 任意文件上传漏洞
-##### 介绍
-使用MultipartFile上传文件时，未对文件大小及后缀类型进行限制，则可能导致任意文件上传风险。
-
-##### 漏洞示例
-```java
-@RequestMapping(value = "/Upload", method = RequestMethod.POST)
-    public Result Upload(@RequestParam MultipartFile file) throws IOException {
-        InputStream inputStream = null;
-        OutputStream outputStream = null;
-        try {
-            inputStream = file.getInputStream();
-            File dFile = new File( "/home/user/" + file.getOriginalFilename());
-            if (!dFile.exists()) {
-                dFile.createNewFile();
-            }
-          outputStream = new FileOutputStream(dumpFile);
-          Util.copy(inputStream, outputStream);
-
-        }finally {
-            Util.Close(inputStream);
-        }
-        return True
-    }
-```
-##### 修复方案
-* 配置MultipartFile，限制上传文件的大小及后缀类型。
-
 ### 待续...
 
 ### 总结

@@ -489,6 +489,55 @@ public String ifUserExit(Model model, HttpServletRequest request) throws IOExcep
 
 * 使用最新或安全版本的第三方组件
 
+### SPel注入
+##### 介绍
+Spel是Spring框架el表达式的缩写，当使用SpelExpressionParser解析spel表达式，且表达式可被外部控制，则可能导致SPel表达式注入从而造成RCE，如[CVE-2018-1260](https://github.com/Cryin/Paper/blob/master/CVE-2018-1260%20spring-security-oauth2%20RCE%20Analysis.md)就是spring-security-oauth2的一个SPel注入导致的RCE 。
+
+##### 漏洞示例
+```java
+@RequestMapping(path = "/elinjection")
+public class SPelInjectionController {
+    @RequestMapping(value="/spel.html",method= RequestMethod.GET)
+    public String SPelInjection(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String el=request.getParameter("el");
+        //el="T(java.lang.Runtime).getRuntime().exec(\"open /Applications/Calculator.app\")";
+        ExpressionParser PARSER = new SpelExpressionParser();
+        Expression exp = PARSER.parseExpression(el);
+        return (String)exp.getValue();
+    }
+}
+```
+##### 修复方案
+* 解析el表达式时，参数不要由外部用户输入
+
+### 任意文件上传漏洞
+##### 介绍
+使用MultipartFile上传文件时，未对文件大小及后缀类型进行限制，则可能导致任意文件上传风险。
+
+##### 漏洞示例
+```java
+@RequestMapping(value = "/Upload", method = RequestMethod.POST)
+    public Result Upload(@RequestParam MultipartFile file) throws IOException {
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
+        try {
+            inputStream = file.getInputStream();
+            File dFile = new File( "/home/user/" + file.getOriginalFilename());
+            if (!dFile.exists()) {
+                dFile.createNewFile();
+            }
+          outputStream = new FileOutputStream(dumpFile);
+          Util.copy(inputStream, outputStream);
+
+        }finally {
+            Util.Close(inputStream);
+        }
+        return True
+    }
+```
+##### 修复方案
+* 配置MultipartFile，限制上传文件的大小及后缀类型。
+
 ### 待续...
 
 ### 总结

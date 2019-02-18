@@ -82,7 +82,7 @@
         <function>
             <rule name='Yaml'>
                 <regmatch>
-                    <regexp>.load\(</regexp>
+                    <regexp>\.load\(</regexp>
                 </regmatch>
             </rule>
         </function>
